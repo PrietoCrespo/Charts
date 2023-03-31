@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: asyncapijson-config
+  #namespace: names Si no se indica namespace lo introducira en el mismo namespace de la aplicación
+data:
+  DATABASE_NAME: {{ .Values.configMapRef.data.DATABASE_NAME | quote }}
+  DATABASE_PORT: {{ .Values.configMapRef.data.DATABASE_PORT | quote }}
+  DATABASE_HOST: {{ .Values.configMapRef.data.DATABASE_HOST | quote }}
